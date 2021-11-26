@@ -11,8 +11,30 @@ a {
   text-decoration: none;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  color: #551a8b;
+}
+
+ul {
+  display: block;
+  float: left;
+  width: 100%;
+}
+
 ul > li {
   float:left;
   clear:left;
   cursor: pointer;
+}
+
+pre {
+  margin: 0;
+  padding: 15px;
+  background-color: #ad90d7;
+  display: block;
+  float: left;
+}
+
+.wrapper {
+  display: flex;
 }
