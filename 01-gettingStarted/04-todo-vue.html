@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link type="text/css" rel="stylesheet" href="styles.css">
+  <title>Framework Training</title>
+</head>
+<body>
+  <div id="app">
+    <div style="margin-bottom: 15px;">
+      <a href="index.html"><i class="fa fa-arrow-circle-left"></i> Back to index</a>
+    </div>
+    <input type="text" v-model="userInput" v-on:keyup.enter="addTodo">
+    <button v-on:click="addTodo">Add To-Do</button>
+    
+    <ul>
+      <li v-for="todo in todos" v-on:click="removeTodo(todo)">{{ todo.value }}</li>
+    </ul>
+    
+    <pre>{{ todos }}</pre>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+  <script src="04-todo-vue.js"></script>
+</body>
+</html>
