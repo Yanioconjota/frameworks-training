@@ -1,0 +1,40 @@
+@import url('normalize.css');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import url('https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  padding: 1%;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #551a8b;
+}
+
+ul {
+  display: block;
+  float: left;
+  width: 100%;
+}
+
+ul > li {
+  float:left;
+  clear:left;
+  cursor: pointer;
+}
+
+pre {
+  margin: 0;
+  padding: 15px;
+  background-color: #ad90d7;
+  display: block;
+  float: left;
+}
+
+.wrapper {
+  display: flex;
+}
