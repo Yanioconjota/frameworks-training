@@ -2967,6 +2967,9 @@ new Vue({
         " " +
         this.capFirst(this.name2[this.getRandomInt(0, this.name2.length + 1)]);
       return this.name;
+    },
+    resetName: function() {
+      this.name = 'Homero';
     }
   },
 });

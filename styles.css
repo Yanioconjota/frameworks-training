@@ -11,8 +11,17 @@ a {
   text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: #551a8b;
+}
+
+p {
+  margin: 0;
 }
 
 ul {
@@ -21,9 +30,9 @@ ul {
   width: 100%;
 }
 
-ul > li {
-  float:left;
-  clear:left;
+ul>li {
+  float: left;
+  clear: left;
   cursor: pointer;
 }
 
@@ -37,4 +46,21 @@ pre {
 
 .wrapper {
   display: flex;
+}
+
+.pillow-success {
+  border-radius: 5px;
+  background-color: #25bf25;
+  color: #fff;
+  width: auto;
+  display: block;
+  float: left;
+  padding: 5px 10px;
+  margin: 15px 0;
+}
+
+.d-block {
+  display: block;
+  float: left;
+  clear: left;
 }
