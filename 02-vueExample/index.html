@@ -10,7 +10,7 @@
 <body>
   <div id="app">
     <div class="split-50">
-      <p>{{ name }}</p>
+      <p><span>Hi </span>{{ name }}</p>
       <p class="pillow" v-bind:class="{ success : name !== 'Homero'}">
         <span v-if="name === 'Homero'">🔥 Go ahead and update your name!</span>
         <span v-if="name !== 'Homero'">💚 Name updated!</span>
