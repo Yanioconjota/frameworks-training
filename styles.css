@@ -86,7 +86,7 @@ li.pillow {
 .absolute-message {
   position: absolute;
   display: block;
-  right: 15px;
+  left: 15px;
   bottom: 0;
 }
 
