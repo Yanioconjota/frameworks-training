@@ -9,12 +9,31 @@
 </head>
 <body>
   <div id="app">
-    <p>{{ name }}</p>
-    <p class="pillow-success" v-if="name !== 'Homero'">💚 Name updated!</p>
-    <div class="d-block">
-      <button v-on:click="generateName">Change name</button>
-      <button v-on:click="resetName">Reset name</button>
+    <div class="split-50">
+      <p>{{ name }}</p>
+      <p class="pillow" v-bind:class="{ success : name !== 'Homero'}">
+        <span v-if="name === 'Homero'">🔥 Go ahead and update your name!</span>
+        <span v-if="name !== 'Homero'">💚 Name updated!</span>
+      </p>
+      <div class="d-block">
+        <button v-on:click="generateName">Generate name</button>
+        <button v-on:click="resetName">Reset name</button>
+        <button v-on:click="resetList">Reset list</button>
+      </div>
     </div>
+    <div class="split-50">
+      <h3>Total names generated: {{ usedNames.length }}</h3>
+      <ul>
+        <li class="u-li pillow"
+            v-for="(el, index) in usedNames"
+            v-bind:style="{ backgroundColor: getColor(index)}"
+            v-bind:id="'el-id-' + index">{{ el }}</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="app2" class="absolute-message pillow">
+    {{ message }}
   </div>
   
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
