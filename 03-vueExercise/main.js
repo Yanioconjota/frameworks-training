@@ -25,11 +25,10 @@ new Vue({
     hobbie: "",
     hobbies: [
       "👃 Smell my fingers after scratching my nuts",
-      "🦨 To fart in crowded and close places",
-      "⚰️ Say awkward things in funerals",
-      "🖕 Cracking my fingers or finger my crack",
-      "😱 Make weird noises at the gym",
-      "🤥 Pretend that I know what I'm talking about in work meetings",
+      "🦨 To fart in close and crowded places",
+      "⚰️ Say awkward things at funerals",
+      "🖕 Cracking my fingers or fingering my crack",
+      "😱 Make weird noises at the gym"
     ],
     removed: "",
     hide: true,
