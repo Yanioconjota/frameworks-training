@@ -69,6 +69,12 @@ hr {
   display: flex;
 }
 
+.d-flex-column {
+  display: flex !important;
+  flex-direction: column;
+  width: 90% !important;
+}
+
 .m-0 {
   margin: 0;
 }

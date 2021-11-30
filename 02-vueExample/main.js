@@ -6,11 +6,17 @@ Vue.component("app-vue-component", {
     };
   },
   template: `
-    <div class="pillow">
+    <div v-on:click="itemClicked" class="pillow">
       <h4>{{ title }}</h4>
-      <p>{{ message }}</p>
+      <p style="cursor: pointer">{{ message }} <-- click here</p>
     </div>
   `,
+  methods: {
+    itemClicked: function() {
+      //takes 2 arguments, the first is the custom name but in lowercase event, the second is the data you want to pass
+      this.$emit("itemclicked", this.message);
+    }
+  }
 });
 
 new Vue({
@@ -2991,8 +2997,12 @@ new Vue({
     resetList: function () {
       this.usedNames = [];
     },
-    getColor: function(number) {
-      return number % 2 === 0 ? "#ad90d7" : "#ca61b0"; 
+    getColor: function (number) {
+      return number % 2 === 0 ? "#ad90d7" : "#ca61b0";
+    },
+    //its's a custom event from child component and expects a string
+    itemWasClicked(name) {
+      alert(name + "\nThe previous line was emited from a component");
     }
   },
 });

@@ -9,7 +9,8 @@
 </head>
 <body>
   <div class="d-block w-100">
-    <div id="app2" class="pillow info d-block my-5">
+    <div id="app2" class="pillow info d-flex-column my-5">
+      <input type="text" v-model="text">
       {{ text }}
     </div>
     <div class="newInstance pillow info d-block my-5" style="bottom: 70px">
@@ -35,7 +36,8 @@
     </div>
     <div class="split-50">
       <div class="d-block w-100">
-      <app-vue-component v-bind:title="'this is a Vue component'">
+      <app-vue-component  v-on:itemClicked="itemWasClicked($event)"
+                          v-bind:title="'this is a Vue component'">
       </app-vue-component>
     </div>
       <h3>Total names generated: {{ usedNames.length }}</h3>
