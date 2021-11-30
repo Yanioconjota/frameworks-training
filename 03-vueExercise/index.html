@@ -32,7 +32,7 @@
     <input type="text" v-model="hobbie">
     <button v-on:click="addhobbie">Add a hobbie</button>
     <app-hobbies v-bind:hobbies="hobbies" v-on:removehobbie="itemWasClicked($event)"></app-hobbies>
-    <p class="pillow error" v-if="removed !== ''" v-on:click="removed=''">❌{{ removed }} was removed!</p>
+    <p class="pillow error" v-if="removed !== ''" v-on:click="removed=''" style="cursor: pointer;">❌{{ removed }} was removed!</p>
   </div>
   
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>

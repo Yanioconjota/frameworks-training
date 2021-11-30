@@ -41,8 +41,8 @@
       </app-vue-component>
     </div>
       <h3>Total names generated: {{ usedNames.length }}</h3>
-      <ul>
-        <li class="u-li pillow"
+      <ul class="unstyled-list">
+        <li class="pillow"
             v-for="(el, index) in usedNames"
             v-bind:style="{ backgroundColor: getColor(index)}"
             v-bind:id="'el-id-' + index">{{ el }}</li>
