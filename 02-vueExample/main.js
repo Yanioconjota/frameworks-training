@@ -1,3 +1,18 @@
+Vue.component("app-vue-component", {
+  props: ['title'],
+  data: function () {
+    return {
+      message: "It's reusable inside any of our Vue instances",
+    };
+  },
+  template: `
+    <div class="pillow">
+      <h4>{{ title }}</h4>
+      <p>{{ message }}</p>
+    </div>
+  `,
+});
+
 new Vue({
   el: "#app",
   data: {
@@ -2983,16 +2998,16 @@ new Vue({
 });
 
 new Vue({
-  el: '#app2',
+  el: "#app2",
   data: {
-    text: 'Hello there! from another VUE instance with # selector'
+    text: "Hello there! from another VUE instance with # selector"
   }
 });
 
 new Vue({
-  el: '.newInstance',
+  el: ".newInstance",
   data: {
-    text: 'another instance but with . selector',
+    text: "another instance but with . selector",
   },
 });
 

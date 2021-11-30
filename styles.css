@@ -56,8 +56,33 @@ pre {
   float: left;
 }
 
+hr {
+  display: block;
+  float: left;
+  clear: both;
+  width: 100%;
+  border: 1px dashed #ad90d7;
+  margin: 15px 0;
+}
+
 .wrapper {
   display: flex;
+}
+
+.m-0 {
+  margin: 0;
+}
+
+.my-5 {
+  margin: 5px 0 !important;
+}
+
+.my-15 {
+  margin: 15px 0 !important;
+}
+
+.my-30 {
+  margin: 30px 0 !important;
 }
 
 .pillow {
@@ -77,6 +102,21 @@ li.pillow {
 .pillow.success {
   background-color: #48e448;
   color: #fff;
+}
+
+.pillow.info {
+  background-color: #f56ae9;
+  color: #fff;
+}
+
+.pillow h1,
+.pillow h2,
+.pillow h3,
+.pillow h4,
+.pillow h5,
+.pillow h6 {
+  margin-top: 0;
+  margin-bottom: 5px;
 }
 
 .w-100 {

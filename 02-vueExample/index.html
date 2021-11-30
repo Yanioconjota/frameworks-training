@@ -8,6 +8,18 @@
   <title>Framework Training</title>
 </head>
 <body>
+  <div class="d-block w-100">
+    <div id="app2" class="pillow info d-block my-5">
+      {{ text }}
+    </div>
+    <div class="newInstance pillow info d-block my-5" style="bottom: 70px">
+      {{ text }}
+    </div>
+    <div class="newInstance pillow info d-block my-5" style="bottom: 35px">
+      {{ text }} -- another instance with the same selector doesn't work
+    </div>
+    <hr>
+  </div>
   <div id="app">
     <div class="split-50">
       <p><span>Hi </span>{{ name }}</p>
@@ -22,6 +34,10 @@
       </div>
     </div>
     <div class="split-50">
+      <div class="d-block w-100">
+      <app-vue-component v-bind:title="'this is a Vue component'">
+      </app-vue-component>
+    </div>
       <h3>Total names generated: {{ usedNames.length }}</h3>
       <ul>
         <li class="u-li pillow"
@@ -30,18 +46,6 @@
             v-bind:id="'el-id-' + index">{{ el }}</li>
       </ul>
     </div>
-  </div>
-
-  <div id="app2" class="absolute-message pillow">
-    {{ message }}
-  </div>
-
-  <div class="newInstance absolute-message pillow" style="bottom: 70px">
-    {{ text }}
-  </div>
-
-  <div class="newInstance absolute-message pillow" style="bottom: 35px">
-    {{ text }} -- another instance with the same selector doesn't work
   </div>
   
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
