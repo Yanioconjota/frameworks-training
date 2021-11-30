@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link type="text/css" rel="stylesheet" href="../styles.css">
+  <title>Framework Training</title>
+</head>
+<body>
+  <h2>Vue exercise</h2>
+  <ol>
+    <li>Create a div and take control with a vue instance ✔️</1i>
+    <li>Put an array of hobbies in that div (provide default hobbies) ✔️</li>
+    <li>Add a new hobbie button + input field where you add the hobbie title ✔️</li>
+    <li>Make the hobbies clickeable so you can remove them on click ✔️</li>
+    <li>display a hobbie deleted message which only shows once at least one hobbie was deleted✔️</li>
+    <li>Add a hobbie counter above the list of hobbies✔️</li>
+    <li>Dynamically style the add classes to the hobbie counter depending you have more or less than 3 hobbies ✔️</li>
+    <li>Outsource your hobbies, the li elements into a reusable component</li>
+  </ol>
+  <div id="app">
+    <h2>List of hobbies</h2>
+    <div class="d-block w-100">
+      <h4 class="pillow"
+          v-bind:class="{ error : hobbies.length <= 3, success : hobbies.length >= 6}">
+          Total hobbies: {{ hobbies.length }}
+          <span v-if="hobbies.length <= 3">You're a disgrace!</span>
+          <span v-if="hobbies.length >= 6">You're a awesome!</span>
+      </h4>
+    </div>
+    <input type="text" v-model="hobbie">
+    <button v-on:click="addhobbie">Add a hobbie</button>
+    <app-hobbies v-bind:hobbies="hobbies" v-on:removehobbie="itemWasClicked($event)"></app-hobbies>
+    <p class="pillow error" v-if="removed !== ''" v-on:click="removed=''">❌{{ removed }} was removed!</p>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
