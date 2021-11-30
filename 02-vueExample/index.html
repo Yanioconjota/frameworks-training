@@ -35,6 +35,14 @@
   <div id="app2" class="absolute-message pillow">
     {{ message }}
   </div>
+
+  <div class="newInstance absolute-message pillow" style="bottom: 70px">
+    {{ text }}
+  </div>
+
+  <div class="newInstance absolute-message pillow" style="bottom: 35px">
+    {{ text }} -- another instance with the same selector doesn't work
+  </div>
   
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>

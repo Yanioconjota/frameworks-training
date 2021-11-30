@@ -2985,8 +2985,15 @@ new Vue({
 new Vue({
   el: '#app2',
   data: {
-    message: 'Hello there! from another VUE instance'
+    text: 'Hello there! from another VUE instance with # selector'
   }
+});
+
+new Vue({
+  el: '.newInstance',
+  data: {
+    text: 'another instance but with . selector',
+  },
 });
 
 /* So far (and also for the rest of this course), we used v-bind  to bind to HTML attributes and properties and v-on  to bind to events.
