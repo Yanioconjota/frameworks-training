@@ -65,6 +65,16 @@ hr {
   margin: 15px 0;
 }
 
+input {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #dbdbdb;
+  padding: 5px 15px;
+  margin-bottom: 5px;
+  box-sizing: border-box;
+}
+
 .wrapper {
   display: flex;
 }
@@ -110,9 +120,22 @@ li.pillow {
   color: #fff;
 }
 
+.pillow.error {
+  background-color: #e4484b;
+  color: #fff;
+}
+
 .pillow.info {
   background-color: #f56ae9;
   color: #fff;
+}
+
+.red {
+  color: #e4484b !important;
+}
+
+.green {
+  color: #2ab52a !important;
 }
 
 .pillow h1,
