@@ -70,7 +70,7 @@ input {
   outline: none;
   border: none;
   border-bottom: 1px solid #dbdbdb;
-  padding: 5px 15px;
+  padding: 5px 0;
   margin-bottom: 5px;
   box-sizing: border-box;
 }
@@ -128,6 +128,9 @@ li.pillow {
 .pillow.info {
   background-color: #f56ae9;
   color: #fff;
+}
+.pillow input {
+  color: #551a8b;
 }
 
 .red {

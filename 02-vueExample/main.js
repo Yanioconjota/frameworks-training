@@ -3010,7 +3010,7 @@ new Vue({
 new Vue({
   el: "#app2",
   data: {
-    text: "Hello there! from another VUE instance with # selector type here to change the message"
+    text: "VUE instance with # selector type here to change the message"
   }
 });
 
