@@ -1,20 +1,15 @@
 Vue.component("app-hobbies", {
   props: ["hobbies"],
-  data: function () {
-    return {
-      hobbie: "",
-    };
-  },
   template: `
     <ul class="unstyled-list">
-      <li class="pillow" v-for="(hobbie, index) in hobbies" v-on:click="removehobbie(hobbie, index)">{{ hobbie }}</li>
+      <li class="pillow" v-for="(hobby, index) in hobbies" v-on:click="removehobbie(hobby, index)">{{ hobby }}</li>
     </ul>
   `,
   methods: {
-    removehobbie: function (hobbie, index) {
+    removehobbie: function (hobby, index) {
       //takes 2 arguments, the first is the custom name but in lowercase event, the second is the data you want to pass
-      this.$emit("removehobbie", { hobbie, index });
-      //console.log(hobbie, index)
+      this.$emit("removehobbie", { hobby, index });
+      //console.log(hobby, index)
     },
   },
 });
@@ -22,25 +17,25 @@ Vue.component("app-hobbies", {
 new Vue({
   el: "#app",
   data: {
-    hobbie: "",
+    hobby: "",
     hobbies: [
       "👃 Smelling my fingers after scratching my nuts",
       "🦨 To fart in close and crowded places",
       "⚰️ Saying awkward things at funerals",
       "🖕 Cracking my fingers or fingering my crack",
-      "😱 To Make weird noises at the gym"
+      "😱 To Make weird noises at the gym",
     ],
     removed: "",
     hide: true,
   },
   methods: {
     addhobbie: function () {
-      if (this.hobbie.trim() == "" || this.hobbie === null) {
+      if (this.hobby.trim() == "" || this.hobby === null) {
         return;
       }
-      this.hobbies.push(this.hobbie);
-      console.log(this.hobbie);
-      this.hobbie = null;
+      this.hobbies.push(this.hobby);
+      console.log(this.hobby);
+      this.hobby = null;
       this.removed = "";
     },
     hobbieCounterStyle: function () {
@@ -50,10 +45,10 @@ new Vue({
         return true;
       }
     },
-    itemWasClicked(event) {
-      this.hobbies.splice(event.index, 1);
-      this.removed = event.hobbie;
-      console.log(event);
+    hobbieRemoved(hobby) {
+      this.hobbies.splice(hobby.index, 1);
+      this.removed = hobby.hobby;
+      console.log(hobby);
     },
   },
 });
