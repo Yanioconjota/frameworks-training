@@ -1,21 +1,16 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
+    <!-- <app-user></app-user> -->
+    <div class="header">
+      <router-link to="/">
+        <img class="logo" src="./assets/logo.png" alt="">
+      </router-link>
+      <router-link to="/">Home</router-link>
+      <router-link to="/blog">Blog</router-link>
+      <router-link to="/account">Account</router-link>
+    </div>
+    <router-view></router-view>
+    <p>This is a text outside router view</p>
   </div>
 </template>
 
@@ -31,13 +26,36 @@ export default {
 </script>
 
 <style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import url('https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css');
+body {
+  margin: 0;
+}
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  font-family: 'Roboto', sans-serif;
   color: #2c3e50;
-  margin-top: 60px;
+  > *:not(.header) {
+    padding: 15px;
+  }
+}
+
+.header {
+  text-align: center;
+  background-color: #08834c;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  a {
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0 15px;
+      color: #fff;
+    }
+    img {
+      width: 23px;
+      height: 23px;
+    }
 }
 
 h1, h2 {

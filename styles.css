@@ -178,3 +178,18 @@ li.pillow {
   float: left;
   width: 50%;
 }
+
+.title-logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0;
+  width: 100%;
+}
+
+.title-logo img {
+  width: 23px;
+  height: 23px;
+  margin-right: 10px;
+}
