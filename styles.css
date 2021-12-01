@@ -58,6 +58,7 @@ pre {
   background-color: #ad90d7;
   display: block;
   float: left;
+  border-radius: 5px;
 }
 
 hr {
