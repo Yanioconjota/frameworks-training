@@ -3022,10 +3022,14 @@ class App extends React.Component {
   changeName() {
     let customName = this.state.name;
 
+    let capFirst = function (string) {
+      return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
     customName = `
       ${this.state.emoji[_.random(0, this.state.emoji.length - 1)]} 
-      ${this.state.name1[_.random(0, this.state.name1.length - 1)]} 
-      ${this.state.name2[_.random(0, this.state.name2.length - 1)]}`;
+      ${capFirst(this.state.name1[_.random(0, this.state.name1.length - 1)])} 
+      ${capFirst(this.state.name2[_.random(0, this.state.name2.length - 1)])}`;
     this.setState({
       name: customName
     });
@@ -3073,100 +3077,7 @@ class App extends React.Component {
 
   addHobby() {
     const oldElements = this.state.hobbies;
-    const emoji = [
-      "✌",
-      "😂",
-      "😝",
-      "😁",
-      "😱",
-      "👉",
-      "🙌",
-      "🍻",
-      "🔥",
-      "🌈",
-      "☀",
-      "🎈",
-      "🌹",
-      "💄",
-      "🎀",
-      "⚽",
-      "🎾",
-      "🏁",
-      "😡",
-      "👿",
-      "🐻",
-      "🐶",
-      "🐬",
-      "🐟",
-      "🍀",
-      "👀",
-      "🚗",
-      "🍎",
-      "💝",
-      "💙",
-      "👌",
-      "❤",
-      "😍",
-      "😉",
-      "😓",
-      "😳",
-      "💪",
-      "💩",
-      "🍸",
-      "🔑",
-      "💖",
-      "🌟",
-      "🎉",
-      "🌺",
-      "🎶",
-      "👠",
-      "🏈",
-      "⚾",
-      "🏆",
-      "👽",
-      "💀",
-      "🐵",
-      "🐮",
-      "🐩",
-      "🐎",
-      "💣",
-      "👃",
-      "👂",
-      "🍓",
-      "💘",
-      "💜",
-      "👊",
-      "💋",
-      "😘",
-      "😜",
-      "😵",
-      "🙏",
-      "👋",
-      "🚽",
-      "💃",
-      "💎",
-      "🚀",
-      "🌙",
-      "🎁",
-      "⛄",
-      "🌊",
-      "⛵",
-      "🏀",
-      "🎱",
-      "💰",
-      "👶",
-      "👸",
-      "🐰",
-      "🐷",
-      "🐍",
-      "🐫",
-      "🔫",
-      "👄",
-      "🚲",
-      "🍉",
-      "💛",
-      "💚",
-    ];
+    const emoji = this.state.emoji;
     console.log(this.state.inputValue);
     if (this.state.inputValue !== '') {
       this.setState({
