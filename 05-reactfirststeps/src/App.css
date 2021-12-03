@@ -25,7 +25,7 @@ hr {
   border: 1px dashed #888888;
 }
 
-.updated {
+.Updated {
   background-color: #000;
   color: #fff;
   border-radius: 5px;
@@ -33,7 +33,7 @@ hr {
   padding: 10px;
 }
 
-.disgraceful {
+.Error {
   background-color: #881b1b;
   color: #fff;
   border-radius: 5px;
@@ -41,7 +41,7 @@ hr {
   padding: 10px;
 }
 
-.awesome {
+.Success {
   background-color: #1b9433;
   color: #fff;
   border-radius: 5px;
@@ -61,6 +61,7 @@ ul {
 
 button {
   margin-right: 5px;
+  padding: 5px 12px;
 }
 
 input {
@@ -92,7 +93,7 @@ input {
   border-radius: 5px;
   width: auto;
   padding: 10px;
-  background-color: #d14242;
+  background-color: #635656;
   color: #fff;
 }
 

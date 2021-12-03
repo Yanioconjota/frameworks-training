@@ -5,7 +5,6 @@ import ReactDOM from "react-dom";
 import "./index.css"; 
 
 function Hobbies(props) {
-  let hobbyTitle = '';
   return (
     <div>
       <p>Hobbies: {props.hobbies.length}</p>
@@ -24,11 +23,12 @@ function Hobbies(props) {
           );
         })}
       </ul>
-      <input onChange={(evt) => { hobbyTitle = evt.target.value }}
+      <input onChange={props.updateInputHandler}
              value={ props.inputValue }
+             placeholder= { props.placeholder }
              className="Mb-15" type="text"></input>
       <button onClick={() => {
-                return props.addHobbyHandler(hobbyTitle);
+                return props.addHobbyHandler();
               }}>Add Hobby</button>
       <button onClick={() => {
                 return props.resetHobbiesHandler(props.hobbies);
@@ -57,6 +57,7 @@ class App extends React.Component {
       hobbyMessage: "",
       hobbyRemoved: "",
       inputValue: "",
+      placeholder: "Type a new hobby",
       hobbies: [
         "👃 Smelling my fingers after scratching my nuts",
         "🦨 To fart in close and crowded places",
@@ -87,6 +88,12 @@ class App extends React.Component {
     });
   }
 
+  updateHobbyInput(event) {
+    this.setState({
+      inputValue: event.target.value
+    })
+  }
+
   changeMessageInput(event) {
     this.setState({
       message: event.target.value,
@@ -97,13 +104,13 @@ class App extends React.Component {
     alert(name);
   }
 
-  addHobby(hobby) {
+  addHobby() {
     const oldElements = this.state.hobbies;
-    console.log(hobby);
-    if (hobby !== '') {
+    console.log(this.state.inputValue);
+    if (this.state.inputValue !== '') {
       this.setState({
-        hobbies: oldElements.concat(hobby),
-        inputValue: ""
+        hobbies: oldElements.concat(this.state.inputValue),
+        inputValue: ''
       });
       console.log(this.state.hobbies);
     }
@@ -117,13 +124,13 @@ class App extends React.Component {
         console.log(hobby, hobbies);
         this.setState({
           hobbies: hobbies,
-          hobbyRemoved: <p className="Pillow">{hobby}</p>,
+          hobbyRemoved: <p className="Pillow">{hobby} removed!</p>,
         });
       }
     }
   }
 
-  resetHobbies(hobbies) {
+  resetHobbies() {
     this.setState({
       hobbies: [
         "👃 Smelling my fingers after scratching my nuts",
@@ -135,6 +142,7 @@ class App extends React.Component {
       hobbyRemoved: "",
       hobbyClass: "",
       inputValue: "",
+      placeholder: "Type a new hobby"
     });
   }
 
@@ -142,19 +150,23 @@ class App extends React.Component {
     let updateParagraph = "";
     let pClass = "";
 
+    const hobbyClass =
+      this.state.hobbies.length <= 3
+        ? "Error"
+        : this.state.hobbies.length >= 4
+        ? "Success"
+        : "";
+    
+    const hobbyMessage =
+      this.state.hobbies.length <= 3
+        ? "Add new hobbies!"
+        : this.state.hobbies.length >= 4
+        ? "You're awesome!"
+        : "";
+
     if (this.state.name !== this.props.name) {
       updateParagraph = <p>Name Updated!</p>;
-      pClass = "updated";
-    }
-
-    if (this.state.hobbies.length <= 3) {
-      this.state.hobbyMessage = "Add new hobbies!";
-      this.state.hobbyClass = "disgraceful";
-    }
-
-    if (this.state.hobbies.length >= 4) {
-      this.state.hobbyMessage = "You're awesome!";
-      this.state.hobbyClass = "awesome";
+      pClass = "Updated";
     }
 
     let list = this.state.elements.map((el) => {
@@ -215,13 +227,14 @@ class App extends React.Component {
         <h4>Solution: </h4>
         <Hobbies
           hobbies={this.state.hobbies}
-          hobbyClass={this.state.hobbyClass}
-          hobbyMessage={this.state.hobbyMessage}
+          hobbyClass={hobbyClass}
+          hobbyMessage={hobbyMessage}
           hobbyRemoved={this.state.hobbyRemoved}
-          inputValue={this.inputValue}
+          inputValue={this.state.inputValue}
           removeHobbyHandler={this.removeHobbie.bind(this)}
           resetHobbiesHandler={this.resetHobbies.bind(this)}
           addHobbyHandler={this.addHobby.bind(this)}
+          updateInputHandler={this.updateHobbyInput.bind(this)}
         />
       </div>
     );
