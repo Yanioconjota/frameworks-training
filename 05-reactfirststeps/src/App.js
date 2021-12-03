@@ -2,6 +2,7 @@ import './App.css';
 import logo from './logo.svg';
 import React from "react";
 import ReactDOM from "react-dom";
+import _ from 'lodash';
 import "./index.css"; 
 
 function Hobbies(props) {
@@ -26,6 +27,7 @@ function Hobbies(props) {
       <input onChange={props.updateInputHandler}
              value={ props.inputValue }
              placeholder= { props.placeholder }
+             onKeyDown={ props.keyDownHandler }
              className="Mb-15" type="text"></input>
       <button onClick={() => {
                 return props.addHobbyHandler();
@@ -104,12 +106,116 @@ class App extends React.Component {
     alert(name);
   }
 
+  keyDown(e) {
+    if (e.key === 'Enter') {
+      console.log(e.key);
+      this.setState({
+        inputValue: e.target.value
+      });
+      this.addHobby();
+    }
+  }
+
   addHobby() {
     const oldElements = this.state.hobbies;
+    const emoji = [
+      "✌",
+      "😂",
+      "😝",
+      "😁",
+      "😱",
+      "👉",
+      "🙌",
+      "🍻",
+      "🔥",
+      "🌈",
+      "☀",
+      "🎈",
+      "🌹",
+      "💄",
+      "🎀",
+      "⚽",
+      "🎾",
+      "🏁",
+      "😡",
+      "👿",
+      "🐻",
+      "🐶",
+      "🐬",
+      "🐟",
+      "🍀",
+      "👀",
+      "🚗",
+      "🍎",
+      "💝",
+      "💙",
+      "👌",
+      "❤",
+      "😍",
+      "😉",
+      "😓",
+      "😳",
+      "💪",
+      "💩",
+      "🍸",
+      "🔑",
+      "💖",
+      "🌟",
+      "🎉",
+      "🌺",
+      "🎶",
+      "👠",
+      "🏈",
+      "⚾",
+      "🏆",
+      "👽",
+      "💀",
+      "🐵",
+      "🐮",
+      "🐩",
+      "🐎",
+      "💣",
+      "👃",
+      "👂",
+      "🍓",
+      "💘",
+      "💜",
+      "👊",
+      "💋",
+      "😘",
+      "😜",
+      "😵",
+      "🙏",
+      "👋",
+      "🚽",
+      "💃",
+      "💎",
+      "🚀",
+      "🌙",
+      "🎁",
+      "⛄",
+      "🌊",
+      "⛵",
+      "🏀",
+      "🎱",
+      "💰",
+      "👶",
+      "👸",
+      "🐰",
+      "🐷",
+      "🐍",
+      "🐫",
+      "🔫",
+      "👄",
+      "🚲",
+      "🍉",
+      "💛",
+      "💚",
+    ];
     console.log(this.state.inputValue);
     if (this.state.inputValue !== '') {
       this.setState({
-        hobbies: oldElements.concat(this.state.inputValue),
+        hobbies: oldElements.concat(`${emoji[_.random(0, emoji.length - 1)]}  ${this.state.inputValue}`),
         inputValue: ''
       });
       console.log(this.state.hobbies);
@@ -159,9 +265,9 @@ class App extends React.Component {
     
     const hobbyMessage =
       this.state.hobbies.length <= 3
-        ? "Add new hobbies!"
+        ? "💪 Add new hobbies!"
         : this.state.hobbies.length >= 4
-        ? "You're awesome!"
+        ? "😝 You're awesome!"
         : "";
 
     if (this.state.name !== this.props.name) {
@@ -235,6 +341,7 @@ class App extends React.Component {
           resetHobbiesHandler={this.resetHobbies.bind(this)}
           addHobbyHandler={this.addHobby.bind(this)}
           updateInputHandler={this.updateHobbyInput.bind(this)}
+          keyDownHandler={this.keyDown.bind(this)}
         />
       </div>
     );
