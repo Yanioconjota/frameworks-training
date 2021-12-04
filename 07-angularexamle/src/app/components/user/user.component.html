@@ -1,0 +1,4 @@
+<p *ngIf="display"
+    [class]="'pillow ' + className">{{ username }}
+</p>
+<p class="pillow error" *ngIf="nameRemovedShow">removed: {{ nameRemoved }}</p>

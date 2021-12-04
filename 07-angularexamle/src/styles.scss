@@ -1,6 +1,10 @@
-@import url('normalize.css');
+/* You can add global styles to this file, and also import other style files */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css');
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
 @import url('https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css');
+
 html,
 body {
   width: 100%;
@@ -36,20 +40,20 @@ ul {
   display: block;
   float: left;
   width: 100%;
-}
 
-ul>li {
-  float: left;
-  clear: left;
-  cursor: pointer;
+  >li {
+    float: left;
+    clear: left;
+    cursor: pointer;
+  }
 }
 
 .unstyled-list {
   padding-left: 0;
-}
 
-.unstyled-list > li {
-  list-style: none;
+  >li {
+    list-style: none;
+  }
 }
 
 pre {
@@ -59,6 +63,11 @@ pre {
   display: block;
   float: left;
   border-radius: 5px;
+}
+
+button {
+  padding: 5px 12px;
+  margin-right: 5px;
 }
 
 hr {
@@ -82,6 +91,13 @@ input {
 
 .wrapper {
   display: flex;
+}
+
+.d-flex {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .d-flex-column {
@@ -120,22 +136,25 @@ li.pillow {
   margin: 5px 0;
 }
 
-.pillow.success {
-  background-color: #48e448;
-  color: #fff;
-}
+.pillow {
+  &.success {
+    background-color: #48e448;
+    color: #fff;
+  }
 
-.pillow.error {
-  background-color: #e4484b;
-  color: #fff;
-}
+  &.error {
+    background-color: #e4484b;
+    color: #fff;
+  }
 
-.pillow.info {
-  background-color: #f56ae9;
-  color: #fff;
-}
-.pillow input {
-  color: #551a8b;
+  &.info {
+    background-color: #f56ae9;
+    color: #fff;
+  }
+
+  input {
+    color: #551a8b;
+  }
 }
 
 .red {
@@ -146,18 +165,25 @@ li.pillow {
   color: #2ab52a !important;
 }
 
-.pillow h1,
-.pillow h2,
-.pillow h3,
-.pillow h4,
-.pillow h5,
-.pillow h6 {
-  margin-top: 0;
-  margin-bottom: 5px;
+.pillow {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
 }
 
 .w-100 {
   width: 100%;
+}
+
+.w-50 {
+  width: 50%;
 }
 
 .absolute-message {
@@ -170,7 +196,6 @@ li.pillow {
 .d-block {
   display: block;
   float: left;
-  clear: left;
 }
 
 .split-50 {
@@ -186,10 +211,10 @@ li.pillow {
   justify-content: flex-start;
   margin: 0;
   width: 100%;
-}
 
-.title-logo img {
-  width: 23px;
-  height: 23px;
-  margin-right: 10px;
+  img {
+    width: 23px;
+    height: 23px;
+    margin-right: 10px;
+  }
 }

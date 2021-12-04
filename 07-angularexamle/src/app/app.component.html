@@ -1,0 +1,20 @@
+<div class="d-block w-100">
+  <div class="w-50 d-block">
+    <h1>{{ name }}</h1>
+    <div class="d-flex-column">
+      <app-user username="Original name is: Homero Thompson"
+                [display]=true
+                className="info"></app-user>
+
+      <app-user [username]=name
+                [display]=nameUpdated
+                [nameRemoved]="nameRemoved"
+                [nameRemovedShow]="nameRemovedShow"></app-user>
+    </div>
+    <app-buttons (randomNameHandler)="randomNameGenerator()"
+                 (resetHandler)="resetName()"></app-buttons>
+  </div>
+  <div class="w-50 d-block">
+    <app-names-list (removeNameHandler)="userRemoved($event)" [usedNames]="usedNames"></app-names-list>
+  </div>
+</div>
