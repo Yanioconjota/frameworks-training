@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-buttons',
@@ -9,6 +9,11 @@ export class ButtonsComponent implements OnInit {
 
   @Output() randomNameHandler = new EventEmitter<boolean>();
   @Output() resetHandler = new EventEmitter<boolean>();
+  @Output() updateListHandler = new EventEmitter<boolean>();
+
+  @Input() randomText = 'Generate random';
+  @Input() addText = 'Add from Input';
+  @Input() resetText = 'Reset';
 
   constructor() { }
 
@@ -23,6 +28,11 @@ export class ButtonsComponent implements OnInit {
   resetClick() {
     this.resetHandler.emit(true);
     console.log('reset button clicked!');
+  }
+
+  updateList() {
+    this.updateListHandler.emit(true);
+    console.log('update button clicked!');
   }
 
 }

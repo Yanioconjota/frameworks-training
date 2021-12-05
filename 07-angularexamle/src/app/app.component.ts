@@ -12,10 +12,15 @@ export class AppComponent implements OnInit {
   name: string = '';
 
   ogName = 'Homero Thompson';
+  inputVal = '';
+  inputHobbyVal = '';
 
   nameUpdated = false;
+  hobbiesUpdated = false;
   nameRemovedShow = false;
+  updateTrigger = false;
   nameRemoved = '';
+  hobbyRemovedText = '';
 
   name1 = [
     "abandoned",
@@ -2969,6 +2974,16 @@ export class AppComponent implements OnInit {
 
   usedNames: string[] = [];
 
+  hobbies: any = [
+    "👃 Smelling my fingers after scratching my nuts",
+    "🦨 To fart in close and crowded places",
+    "⚰️ Saying awkward things at funerals",
+    "🖕 Cracking my fingers or fingering my crack",
+    "😱 To Make weird noises at the gym",
+  ];
+
+  constructor() {}
+
   ngOnInit() {
     this.name = this.ogName;
   }
@@ -2977,16 +2992,43 @@ export class AppComponent implements OnInit {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
-  randomNameGenerator() {
+  randomNameGenerator(hobbies?: any) {
     let customName = `
       ${this.emoji[random(0, this.emoji.length - 1)]} 
       ${this.capFirst(this.name1[random(0, this.name1.length - 1)])} 
       ${this.capFirst(this.name2[random(0, this.name2.length - 1)])}`;
     
     this.name = customName;
-    this.usedNames.push(customName);
+    if (hobbies) {
+      console.log(hobbies);
+      this.hobbies.push(customName);
+    } else {
+      this.usedNames.push(customName);
+    }
+    this.hobbiesUpdated = true;
     this.nameUpdated = true;
     this.nameRemovedShow = false;
+  }
+
+  addNameToList(ev: any) {
+    let emoji = this.emoji[random(0, this.emoji.length - 1)];
+    if ((ev.key === 'Enter' || ev === true) && this.inputVal !== '') {
+      this.usedNames = this.usedNames.concat( `${emoji} ${this.capFirst(this.inputVal)}`);
+      this.inputVal = '';
+    }
+  }
+
+  addHobby(ev: any) {
+    let emoji = this.emoji[random(0, this.emoji.length - 1)];
+    if ((ev.key === 'Enter' || ev === true) && this.inputHobbyVal !== '') {
+      this.hobbies.push( `${emoji} ${this.capFirst(this.inputHobbyVal)}`);
+      this.inputHobbyVal = '';
+      this.hobbiesUpdated = true;
+    }
+  }
+
+  updateNameToList(ev: boolean) {
+    this.addNameToList(ev);
   }
 
   resetName() {
@@ -2994,11 +3036,28 @@ export class AppComponent implements OnInit {
     this.usedNames = [];
     this.nameUpdated = false;
     this.nameRemovedShow = false;
+    this.inputVal = '';
+  }
+
+  resetHobbies() {
+    this.hobbies =  [
+      "👃 Smelling my fingers after scratching my nuts",
+      "🦨 To fart in close and crowded places",
+      "⚰️ Saying awkward things at funerals",
+      "🖕 Cracking my fingers or fingering my crack",
+      "😱 To Make weird noises at the gym",
+    ];
+    this.hobbiesUpdated = false;
+    this.hobbyRemovedText = '';
   }
 
   userRemoved(ev: string) {
     this.nameRemovedShow = true;
     this.nameRemoved = ev;
     this.nameUpdated = false;
+  }
+
+  hobbyRemoved(ev: string) {
+    this.hobbyRemovedText = ev;
   }
 }

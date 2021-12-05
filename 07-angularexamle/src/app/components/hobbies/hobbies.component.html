@@ -1,0 +1,6 @@
+<ul class="unstyled-list">
+  <li class="pillow"
+      [ngClass]="{info: i % 2 === 0}" [id]="'hobby-' + (i + 1)"
+      *ngFor="let hobby of hobbiesList; let i = index"
+      (click)="removeHobby(hobby, i)">{{ hobby }}</li>
+</ul>

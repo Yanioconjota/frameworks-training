@@ -10,11 +10,55 @@
                 [display]=nameUpdated
                 [nameRemoved]="nameRemoved"
                 [nameRemovedShow]="nameRemovedShow"></app-user>
+      <app-input [inputVal]="inputVal"
+                 (inputValueHandler)="inputVal = $event.target.value; addNameToList($event)"></app-input>
     </div>
     <app-buttons (randomNameHandler)="randomNameGenerator()"
-                 (resetHandler)="resetName()"></app-buttons>
+                 (resetHandler)="resetName()"
+                 (updateListHandler)="updateNameToList($event)"
+                 [randomText]="'Generate random name'"></app-buttons>
   </div>
   <div class="w-50 d-block">
     <app-names-list (removeNameHandler)="userRemoved($event)" [usedNames]="usedNames"></app-names-list>
+  </div>
+</div>
+<hr>
+<div class="w-100 d-block">
+  <h4>Exercise: </h4>
+  <ol>
+    <li>Create a "div" and render a base component with Angular✔️</li>
+    <li>
+      Output an array of hobbies in that div providing some default
+      hobbies✔️
+    </li>
+    <li>
+      Add a new hobby button and a button to add a title from an input
+      field✔️
+    </li>
+    <li>Click hobbies to remove them✔️</li>
+    <li>Add a Hobby deleted message showing the las deleted hobby✔️</li>
+    <li>Add a hobby counter✔️</li>
+    <li>
+      Dinamically add style or classes to the hobby counter if you have
+      mor or less 3 hobbies✔️
+    </li>
+    <li>Outsource the hobbies list into a re-usable component✔️</li>
+  </ol>
+  <hr>
+  <div class="d-block w-100">
+    <div class="d-block w-50">
+      <h4 class="pillow"
+      [ngClass]="{error: hobbies.length <= 3}">List of hobbies: {{ hobbies.length }}</h4>
+      <app-input [inputVal]="inputHobbyVal"
+                 (inputValueHandler)="inputHobbyVal = $event.target.value; addHobby($event)"></app-input>
+      <app-buttons (randomNameHandler)="randomNameGenerator(true)"
+                   (resetHandler)="resetHobbies()"
+                   (updateListHandler)="addHobby($event)"
+                   [randomText]="'Generate random hobby'"></app-buttons>
+    </div>
+    <div class="d-block w-50">
+      <p *ngIf="hobbyRemovedText !== ''" class="pillow error">Hobby removed: {{ hobbyRemovedText }}</p>
+      <app-hobbies [inputHobbyVal]="inputHobbyVal" [hobbiesList]="hobbies" (removeHobbyHandler)="hobbyRemoved($event)"></app-hobbies>
+    </div>
   </div>
 </div>
