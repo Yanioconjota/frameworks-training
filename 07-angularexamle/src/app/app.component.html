@@ -1,3 +1,5 @@
+<app-header></app-header>
+<router-outlet></router-outlet>
 <div class="d-block w-100">
   <div class="w-50 d-block">
     <h1>{{ name }}</h1>
@@ -57,7 +59,10 @@
                    [randomText]="'Generate random hobby'"></app-buttons>
     </div>
     <div class="d-block w-50">
-      <p *ngIf="hobbyRemovedText !== ''" class="pillow error">Hobby removed: {{ hobbyRemovedText }}</p>
+      <p *ngIf="hobbyRemovedText !== ''"
+         (click)="hobbyRemovedText = ''"
+         style="cursor: pointer;"
+         class="pillow error">Hobby removed: {{ hobbyRemovedText }}</p>
       <app-hobbies [inputHobbyVal]="inputHobbyVal" [hobbiesList]="hobbies" (removeHobbyHandler)="hobbyRemoved($event)"></app-hobbies>
     </div>
   </div>

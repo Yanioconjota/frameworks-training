@@ -218,3 +218,17 @@ li.pillow {
     margin-right: 10px;
   }
 }
+
+.nav {
+  @extend .unstyled-list;
+  @extend .d-flex;
+  @extend .w-100;
+  text-align: center;
+  justify-content: center;
+  > * {
+    padding: 5px 12px;
+    background-color: #dbdbdb;
+    border-radius: 5px;
+    margin: 0 5px;
+  }
+}
