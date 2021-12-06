@@ -52,7 +52,7 @@
   </div>
   <hr class="w-100">
   <h3 class="title-logo">
-    <img src="./assets/angular_logo.png" alt="vue logo">
+    <img src="./assets/angular_logo.png" alt="angular logo">
     Angular Examples</h3>
   <div class="d-flex-column">
     <p>For the next example please do the following:</p>
@@ -61,6 +61,208 @@
     <pre>ng new my-app</pre>
     <p>after that:</p>
     <pre>cd 07-angularexample && ng serve -o</pre>
+  </div>
+  <hr class="w-100">
+  <div class="d-block w-100">
+    <h3>Comparing the frameworks:</h3>
+    <img class="d-block"
+         style="width: 80%; margin-bottom: 15px"
+         src="./assets/learning-curve.png" alt="">
+  </div>
+  <div class="d-block w-100 mb-15">
+    <h3>Downscaling/MPAs</h3>
+    <p>Can you just drop in a JS import and get started?</p>
+    <div class="d-flex">
+      <div class="d-flex center bg-lt-red py-15">
+        <img class="logo" src="./assets/angular_logo.png" alt="angular logo">➖
+      </div>
+      <div class="d-flex center bg-lt-green py-15">
+        <img class="logo" src="./assets/vue_logo.png" alt="vue logo">➕
+      </div>
+      <div class="d-flex center bg-lt-green py-15">
+        <img class="logo" src="./assets/react_logo.png" alt="react logo">➕
+      </div>
+    </div>
+    <p>Is the framework suited for MPAs?</p>
+    <div class="d-flex">
+      <div class="d-flex center bg-lt-red py-15">
+        <img class="logo" src="./assets/angular_logo.png" alt="angular logo">➖
+      </div>
+      <div class="d-flex center bg-lt-green py-15">
+        <img class="logo" src="./assets/vue_logo.png" alt="vue logo">➕
+      </div>
+      <div class="d-flex center bg-lt-orange py-15">
+        <img class="logo" src="./assets/react_logo.png" alt="react logo">〰️
+      </div>
+    </div>
+    <p>Is a more complex buid workflow required/recommended (<em>for simple apps</em>)?</p>
+    <div class="d-flex">
+      <div class="d-flex center bg-lt-red py-15">
+        <img class="logo" src="./assets/angular_logo.png" alt="angular logo">➖ (yes)
+      </div>
+      <div class="d-flex center bg-lt-green py-15">
+        <img class="logo" src="./assets/vue_logo.png" alt="vue logo">➕ (no)
+      </div>
+      <div class="d-flex center bg-lt-red py-15">
+        <img class="logo" src="./assets/react_logo.png" alt="react logo">➖ (yes)
+      </div>
+    </div>
+    <p>Does the framework come with a lot of overhead (<em>bundles of code you can't get rif off</em>)?</p>
+    <div class="d-flex">
+      <div class="d-flex center bg-lt-red py-15">
+        <img class="logo" src="./assets/angular_logo.png" alt="angular logo">➖ (yes)
+      </div>
+      <div class="d-flex center bg-lt-green py-15">
+        <img class="logo" src="./assets/vue_logo.png" alt="vue logo">➕ (no)
+      </div>
+      <div class="d-flex center bg-lt-green py-15">
+        <img class="logo" src="./assets/react_logo.png" alt="react logo">➕ (no)
+      </div>
+    </div>
+  </div>
+  <div class="d-block w-100 mb-15">
+    <h3>Upscaling/SPAs</h3>
+    <p>Can you write and mantain complex/ a lot of code?</p>
+    <div class="d-flex">
+      <div class="d-flex center bg-lt-green py-15">
+        <img class="logo" src="./assets/angular_logo.png" alt="angular logo">➕
+      </div>
+      <div class="d-flex center bg-lt-orange py-15">
+        <img class="logo" src="./assets/vue_logo.png" alt="vue logo">〰️
+      </div>
+      <div class="d-flex center bg-lt-orange py-15">
+        <img class="logo" src="./assets/react_logo.png" alt="react logo">〰️
+      </div>
+    </div>
+    <p>Do you need to rely on a lot of third-party packages (<em>e.g. form validation</em>)?</p>
+    <div class="d-flex">
+      <div class="d-flex center bg-lt-green py-15">
+        <img class="logo" src="./assets/angular_logo.png" alt="angular logo">➕ (No)
+      </div>
+      <div class="d-flex center bg-lt-orange py-15"><img class="logo" src="./assets/vue_logo.png" alt="vue logo">〰️ (a bit)
+      </div>
+      <div class="d-flex center bg-lt-red py-15">
+        <img class="logo" src="./assets/react_logo.png" alt="react logo">➖ (yes)
+      </div>
+    </div>
+    <p>Optimization capabilities</p>
+    <div class="d-flex">
+      <div class="d-flex center bg-lt-green py-15">
+        <img class="logo" src="./assets/angular_logo.png" alt="angular logo">➕ (A lot, but not easy)
+      </div>
+      <div class="d-flex center bg-lter-green py-15">
+       <img class="logo" src="./assets/vue_logo.png" alt="vue logo">➕ (decent)
+      </div>
+      <div class="d-flex center bg-lter-green py-15">
+        <img class="logo" src="./assets/react_logo.png" alt="react logo">➕ (decent)
+      </div>
+    </div>
+    <p>Ease of managing the State</p>
+    <div class="d-flex">
+      <div class="d-flex center bg-lt-orange py-15">
+        <img class="logo" src="./assets/angular_logo.png" alt="angular logo">〰️ (NgRx)
+      </div>
+      <div class="d-flex center bg-lt-green py-15">
+        <img class="logo" src="./assets/vue_logo.png" alt="vue logo">➕
+      </div>
+      <div class="d-flex center bg-lter-green py-15">
+        <img class="logo" src="./assets/react_logo.png" alt="react logo">➕ (Redux)
+      </div>
+    </div>
+    <div class="d-block w-100 my-30">
+      <h3 class="m-0">Performance info at: </h3>
+      <a class="pillow" target="_blank" href="https://krausest.github.io/js-framework-benchmark/index.html">Js framework benchmark 2021</a>
+    <div class="d-flex">
+    </div>
+  </div>
+  <div class="d-block w-100">
+    <table class="tg" style="table-layout: fixed; width: 100%">
+    <colgroup>
+    <col style="width: 25%">
+    <col style="width: 25%">
+    <col style="width: 25%">
+    <col style="width: 25%">
+    </colgroup>
+    <thead>
+      <tr>
+        <th class="tg-0pky"></th>
+        <th class="tg-c3ow">
+          <img class="logo" src="./assets/angular_logo.png" alt="angular logo">
+        </th>
+        <th class="tg-c3ow">
+            <img class="logo" src="./assets/vue_logo.png" alt="vue logo">
+        </th>
+        <th class="tg-c3ow">
+            <img class="logo" src="./assets/react_logo.png" alt="react logo">
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="tg-0pky">Learning curve<br></td>
+        <td class="tg-red">➖</td>
+        <td class="tg-green">➕</td>
+        <td class="tg-red">➖</td>
+      </tr>
+      <tr>
+        <td class="tg-0pky">Downscaling/MPAs</td>
+        <td class="tg-red">➖</td>
+        <td class="tg-green">➕</td>
+        <td class="tg-lt-green">➕</td>
+      </tr>
+      <tr>
+        <td class="tg-0pky">Upscaling/SPAs</td>
+        <td class="tg-green">➕</td>
+        <td class="tg-lt-green">➕</td>
+        <td class="tg-lt-green">➕</td>
+      </tr>
+      <tr>
+        <td class="tg-0pky">Performance</td>
+        <td class="tg-lt-green">➕ better for bigger apps</td>
+        <td class="tg-green">➕</td>
+        <td class="tg-lt-green">➕</td>
+      </tr>
+      <tr>
+        <td class="tg-0pky">Dev to Production</td>
+        <td class="tg-lt-green">➕</td>
+        <td class="tg-green">➕</td>
+        <td class="tg-green">➕</td>
+      </tr>
+      <tr>
+        <td class="tg-0pky">Popularity/Jobs<br></td>
+        <td class="tg-green">
+          <p>➕</p>
+          <p>78.1 K Github stars (2021)</p>
+          <p>1.498 Contributors</p>
+          <p>2.064.703 Users</p>
+          <p>Dev by Google</p>
+          <p>
+            <a target="_blank" href="https://ar.indeed.com/jobs?q=angular&l=">1.089 Job Offers (Indeed Argentina)</a>
+          </p>
+        </td>
+        <td class="tg-orange">
+          <p>〰️</p>
+          <p>191 K Github stars (2021)</p>
+          <p>404 Contributors</p>
+          <p>--- Users</p>
+          <p>Dev by Evan You</p>
+          <p>
+            <a target="_blank" href="https://ar.indeed.com/jobs?q=vue&l==">277 Job Offers (Indeed Argentina)</a>
+          </p>
+        </td>
+        <td class="tg-green">
+          <p>➕</p>
+          <p>179 K Github stars (2021)</p>
+          <p>1.519 Contributors</p>
+          <p>8.264.685 Users</p>
+          <p>Dev by Facebook</p>
+          <p>
+            <a target="_blank" href="hhttps://ar.indeed.com/jobs?q=react&l=">1.248 Job Offers (Indeed Argentina)</a>
+          </p>
+        </td>
+      </tr>
+    </tbody>
+    </table>
   </div>
 </body>
 </html>
