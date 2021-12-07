@@ -2982,10 +2982,13 @@ export class AppComponent implements OnInit {
     "😱 To Make weird noises at the gym",
   ];
 
+  newHobbies: any = [];
+
   constructor() {}
 
   ngOnInit() {
     this.name = this.ogName;
+     this.newHobbies = [...this.hobbies];
   }
 
   capFirst(string: string):string {
@@ -3001,7 +3004,7 @@ export class AppComponent implements OnInit {
     this.name = customName;
     if (hobbies) {
       console.log(hobbies);
-      this.hobbies.push(customName);
+      this.newHobbies = [...this.newHobbies, `${customName} ${this.capFirst(this.inputHobbyVal)}`];
     } else {
       this.usedNames.push(customName);
     }
@@ -3021,7 +3024,7 @@ export class AppComponent implements OnInit {
   addHobby(ev: any) {
     let emoji = this.emoji[random(0, this.emoji.length - 1)];
     if ((ev.key === 'Enter' || ev === true) && this.inputHobbyVal !== '') {
-      this.hobbies.push( `${emoji} ${this.capFirst(this.inputHobbyVal)}`);
+      this.newHobbies = [...this.newHobbies, `${emoji} ${this.capFirst(this.inputHobbyVal)}`];
       this.inputHobbyVal = '';
       this.hobbiesUpdated = true;
     }
@@ -3040,13 +3043,8 @@ export class AppComponent implements OnInit {
   }
 
   resetHobbies() {
-    this.hobbies =  [
-      "👃 Smelling my fingers after scratching my nuts",
-      "🦨 To fart in close and crowded places",
-      "⚰️ Saying awkward things at funerals",
-      "🖕 Cracking my fingers or fingering my crack",
-      "😱 To Make weird noises at the gym",
-    ];
+    this.newHobbies =  [];
+    this.newHobbies = [...this.hobbies];
     this.hobbiesUpdated = false;
     this.hobbyRemovedText = '';
   }
