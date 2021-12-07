@@ -19,7 +19,7 @@ body {
 
 body {
   font-family: 'Roboto', sans-serif;
-  padding: 15px;
+  //padding: 15px;
   width: 100%;
 }
 
@@ -67,7 +67,7 @@ pre {
 
 button {
   padding: 5px 12px;
-  margin-right: 5px;
+  //margin-right: 5px;
 }
 
 hr {
@@ -93,18 +93,18 @@ input {
   display: flex;
 }
 
-.d-flex {
-  display: flex;
-  width: 100%;
-  justify-content: flex-start;
-  align-items: center;
-}
+// .d-flex {
+//   display: flex;
+//   width: 100%;
+//   justify-content: flex-start;
+//   align-items: center;
+// }
 
-.d-flex-column {
-  display: flex !important;
-  flex-direction: column;
-  width: 90% !important;
-}
+// .d-flex-column {
+//   display: flex !important;
+//   flex-direction: column;
+//   width: 90% !important;
+// }
 
 .m-0 {
   margin: 0;
@@ -123,6 +123,7 @@ input {
 }
 
 .pillow {
+  cursor: pointer;
   border-radius: 5px;
   width: auto;
   display: block;
@@ -221,7 +222,7 @@ li.pillow {
 
 .nav {
   @extend .unstyled-list;
-  @extend .d-flex;
+  //@extend .d-flex;
   @extend .w-100;
   text-align: center;
   justify-content: center;

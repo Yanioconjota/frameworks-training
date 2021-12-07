@@ -1,8 +1,6 @@
-<ul>
-  <li *ngFor="let name of usedNames; let i = index"
-      [ngClass]="{info: i % 2 === 0}" [id]="'name-' + (i + 1)"
-      class="pillow"
-      (click)="removeName(name, i)">
-    {{ name }}
-  </li>
-</ul>
+<span *ngFor="let name of usedNames; let i = index"
+    [ngClass]="{info: i % 2 === 0}" [id]="'name-' + (i + 1)"
+    class="pillow m-1"
+    (click)="removeName(name, i)">
+  {{ name }}
+</span>
